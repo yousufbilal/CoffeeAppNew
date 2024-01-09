@@ -9,9 +9,10 @@ import {COLORS} from '../theme/theme'
 // import {TabBarIOSItem} from 'react-native'
 
 const Tab = createBottomTabNavigator()
+const {Screen, Navigator} = Tab
 
 const TabNavigator = () => {
-    return (<Tab.Navigator screenOptions={
+    return (<Navigator screenOptions={
         {
             tabBarHideOnKeyboard: true,
             headerShown: false,
@@ -19,15 +20,15 @@ const TabNavigator = () => {
             tabBarStyle: styles.tabBarStyle
         }
     }>
-        <Tab.Screen name='Home'
+        <Screen name='Home'
             component={HomeScreen}/>
-        <Tab.Screen name='Cart'
+        <Screen name='Cart'
             component={CartScreen}/>
-        <Tab.Screen name='Favorite'
+        <Screen name='Favorite'
             component={FavoriteScreen}/>
-        <Tab.Screen name='History'
+        <Screen name='History'
             component={OrderHistoryScreen}/>
-    </Tab.Navigator>)
+    </Navigator>)
 }
 
 export default TabNavigator
